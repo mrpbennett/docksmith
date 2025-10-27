@@ -3,14 +3,11 @@ package config
 import (
 	"os"
 
-	"github.com/charmbracelet/log"
 	"github.com/joho/godotenv"
+	"github.com/mrpbennett/docksmith/internal/logz"
 )
 
-var logger = log.NewWithOptions(os.Stderr, log.Options{
-	ReportCaller:    true,
-	ReportTimestamp: true,
-})
+var logger = logz.New()
 
 type Config struct {
 	GitHubWebhookSecret string
